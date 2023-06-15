@@ -45,20 +45,50 @@
                                     <action selector="testSegmentFerAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="tk2-B2-mnJ"/>
                                 </connections>
                             </segmentedControl>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="jFc-5A-xbt">
+                                <rect key="frame" x="148" y="83" width="118" height="31"/>
+                                <color key="minimumTrackTintColor" systemColor="systemPurpleColor"/>
+                                <color key="maximumTrackTintColor" red="0.93059692091174406" green="0.76595572539389845" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="testSliderFerAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="b0J-he-Sb0"/>
+                                </connections>
+                            </slider>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="50Y-2W-LGd">
+                                <rect key="frame" x="160" y="121" width="94" height="32"/>
+                                <connections>
+                                    <action selector="testStepperFerAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="X6q-In-R8Q"/>
+                                </connections>
+                            </stepper>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gTD-QZ-v3p">
+                                <rect key="frame" x="182.5" y="404" width="51" height="31"/>
+                                <color key="onTintColor" red="0.7801090275" green="0.36347735450000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="testSwitchFerAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="MPJ-hP-5HM"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Kyk-89-csR" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="1Fh-DL-0YK"/>
+                            <constraint firstItem="jFc-5A-xbt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="150" id="4yQ-UH-dOX"/>
                             <constraint firstItem="bgn-uf-wWI" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="5A7-XS-GNY"/>
+                            <constraint firstItem="jFc-5A-xbt" firstAttribute="top" secondItem="tzR-YV-9eM" secondAttribute="bottom" constant="8" symbolic="YES" id="9Yt-6Z-wAR"/>
+                            <constraint firstItem="gTD-QZ-v3p" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="A86-la-bnP"/>
                             <constraint firstItem="zo9-Jc-0yw" firstAttribute="top" secondItem="Kyk-89-csR" secondAttribute="bottom" constant="7.5" id="BrI-td-vfU"/>
                             <constraint firstItem="Kyk-89-csR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="FeA-hQ-QSA"/>
                             <constraint firstItem="zo9-Jc-0yw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="JKp-ik-HyY"/>
                             <constraint firstItem="tzR-YV-9eM" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Tpa-Ko-JT0"/>
+                            <constraint firstItem="50Y-2W-LGd" firstAttribute="firstBaseline" secondItem="jFc-5A-xbt" secondAttribute="baseline" constant="8" symbolType="layoutAnchor" id="Vfs-mh-Nud"/>
                             <constraint firstItem="tzR-YV-9eM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="WFv-1w-ZsE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kyk-89-csR" secondAttribute="trailing" constant="20" id="dMu-kp-00e"/>
+                            <constraint firstItem="50Y-2W-LGd" firstAttribute="centerX" secondItem="tzR-YV-9eM" secondAttribute="centerX" id="eHw-eu-dFb"/>
                             <constraint firstItem="bgn-uf-wWI" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="hBT-y5-aYu"/>
+                            <constraint firstItem="jFc-5A-xbt" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="kIR-Va-Tyl"/>
                             <constraint firstItem="Kyk-89-csR" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="qzS-uH-K7N"/>
+                            <constraint firstItem="Kyk-89-csR" firstAttribute="top" secondItem="gTD-QZ-v3p" secondAttribute="bottom" constant="8" symbolic="YES" id="rJN-h7-zNk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jFc-5A-xbt" secondAttribute="trailing" constant="150" id="rtE-km-6Ua"/>
+                            <constraint firstItem="50Y-2W-LGd" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="wtX-j3-K95"/>
                         </constraints>
                     </view>
                     <connections>
@@ -66,6 +96,9 @@
                         <outlet property="testPageControlFer" destination="bgn-uf-wWI" id="ctC-LV-Kxs"/>
                         <outlet property="testPickerFer" destination="zo9-Jc-0yw" id="UJc-Eu-fV6"/>
                         <outlet property="testSegmentFer" destination="tzR-YV-9eM" id="mE7-Wc-EHe"/>
+                        <outlet property="testSliderFer" destination="jFc-5A-xbt" id="flf-90-QWC"/>
+                        <outlet property="testStepperFer" destination="50Y-2W-LGd" id="Gc0-0D-OUr"/>
+                        <outlet property="testSwitchFer" destination="gTD-QZ-v3p" id="p7a-Yi-8FY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -82,6 +115,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

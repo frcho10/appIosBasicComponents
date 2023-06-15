@@ -22,6 +22,12 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var testSegmentFer: UISegmentedControl!
     
+    @IBOutlet weak var testSliderFer: UISlider!
+    
+    @IBOutlet weak var testStepperFer: UIStepper!
+    
+    @IBOutlet weak var testSwitchFer: UISwitch!
+    
     //entiendo que es como el component did mount de react
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,36 +49,59 @@ class ViewController: UIViewController {
         }
         testSegmentFer.selectedSegmentIndex=0//se inicializa en cero la seleccion del segment
         
+        //slider
+        testSliderFer.minimumValue = 1
+        testSliderFer.maximumValue = Float(arrayNames.count)
+        
+        //stepper
+        testStepperFer.minimumValue = 0
+        testStepperFer.maximumValue = Double(arrayNames.count-1)
+        
+        //switch
+        testSwitchFer.isOn = false
+        
     }
     
     //funcion global para setear el nombre del label desde los action de cada componente
-    func setValueLabel(valor entrante: String){
+    func setValueLabel(value incoming: String){
         
-        testLabelFer.text = "Hola "+entrante
+        testLabelFer.text = "Hola "+incoming
     }
     
-    func setValueToOtherComponents(valor entrante: Int){
+    func setValueToOtherComponents(value incoming: Int, valueFloat incomingFloat: Float? = nil){
         
         //PICKER
-        testPickerFer.selectRow(entrante, inComponent: 0, animated: true)
+        testPickerFer.selectRow(incoming, inComponent: 0, animated: true)
         
         //SEGMENT
-        testSegmentFer.selectedSegmentIndex = entrante
+        testSegmentFer.selectedSegmentIndex = incoming
         
         //PAGE CONTROL
-        testPageControlFer.currentPage = entrante
+        testPageControlFer.currentPage = incoming
+        
+        //Slider
+        var valueSlider: Float = 1.0
+        if incomingFloat != nil {
+            valueSlider = incomingFloat!
+        }else {
+            valueSlider = Float(incoming+1)
+        }
+        testSliderFer.value = valueSlider
+        
+        //STEPPER
+        testStepperFer.value = Double(incoming)
         
     }
     
     //actions
     @IBAction func actionTestPageControlFer(_ sender: Any) {//acction page control
         
-        setValueToOtherComponents(valor: testPageControlFer.currentPage)
+        setValueToOtherComponents(value: testPageControlFer.currentPage)
         //esto es para darle la selección desde el page control al: picker
         //testPickerFer.selectRow(testPageControlFer.currentPage, inComponent: 0, animated: true)
         
         //:nombre al label
-        setValueLabel(valor: arrayNames[testPageControlFer.currentPage])
+        setValueLabel(value: arrayNames[testPageControlFer.currentPage])
         
         //:segment
         //testSegmentFer.selectedSegmentIndex = testPageControlFer.currentPage
@@ -82,9 +111,9 @@ class ViewController: UIViewController {
     @IBAction func testSegmentFerAction(_ sender: Any) {//action from segment
         
         //se setea el nombre del label
-        setValueLabel(valor: arrayNames[testSegmentFer.selectedSegmentIndex])
+        setValueLabel(value: arrayNames[testSegmentFer.selectedSegmentIndex])
         
-        setValueToOtherComponents(valor: testSegmentFer.selectedSegmentIndex)
+        setValueToOtherComponents(value: testSegmentFer.selectedSegmentIndex)
         
         //esto es para darle la selección desde el segment al: picker
         //testPickerFer.selectRow(testSegmentFer.selectedSegmentIndex, inComponent: 0, animated: true)
@@ -93,6 +122,35 @@ class ViewController: UIViewController {
         //testPageControlFer.currentPage = testSegmentFer.selectedSegmentIndex
     }
     
+    
+    @IBAction func testSliderFerAction(_ sender: Any) {//action to slider component
+        
+        print(testSliderFer.value)
+        
+        let selectedValueSlider = Int(roundf(testSliderFer.value)-1)
+        
+        setValueToOtherComponents(value: selectedValueSlider, valueFloat: testSliderFer.value)
+        
+        setValueLabel(value: arrayNames[selectedValueSlider])
+        
+    }
+    
+    @IBAction func testStepperFerAction(_ sender: Any) {
+        print(testStepperFer.value)
+        let selectedValueStepper = Int(round(testStepperFer.value))
+        setValueLabel(value: arrayNames[selectedValueStepper])
+
+        setValueToOtherComponents(value: selectedValueStepper)
+    }
+    
+    @IBAction func testSwitchFerAction(_ sender: Any) {
+        
+            testPickerFer.isHidden = testSwitchFer.isOn
+            testStepperFer.isHidden = testSwitchFer.isOn
+            testSliderFer.isHidden = testSwitchFer.isOn
+            testSegmentFer.isHidden = testSwitchFer.isOn
+            testPageControlFer.isHidden = testSwitchFer.isOn
+    }
     
 }
 
@@ -115,9 +173,9 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {//el ext
         print(valueSelected)
         
         //esto es para darle la selección desde el pciker al: nombre del label
-        setValueLabel(valor: valueSelected)
+        setValueLabel(value: valueSelected)
         
-        setValueToOtherComponents(valor: row)
+        setValueToOtherComponents(value: row)
         
         //:page control
         //testPageControlFer.currentPage = row
