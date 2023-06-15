@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="appBasicComponents" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zo9-Jc-0yw">
+                                <rect key="frame" x="47" y="471" width="320" height="216"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hola Fer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kyk-89-csR">
+                                <rect key="frame" x="20" y="443" width="374" height="20.5"/>
+                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="bgn-uf-wWI">
+                                <rect key="frame" x="149" y="836" width="116" height="26"/>
+                                <color key="pageIndicatorTintColor" systemColor="opaqueSeparatorColor"/>
+                                <color key="currentPageIndicatorTintColor" name="AccentColor"/>
+                                <connections>
+                                    <action selector="actionTestPageControlFer:" destination="BYZ-38-t0r" eventType="valueChanged" id="bb6-Y3-0zT"/>
+                                </connections>
+                            </pageControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Kyk-89-csR" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="1Fh-DL-0YK"/>
+                            <constraint firstItem="bgn-uf-wWI" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="5A7-XS-GNY"/>
+                            <constraint firstItem="zo9-Jc-0yw" firstAttribute="top" secondItem="Kyk-89-csR" secondAttribute="bottom" constant="7.5" id="BrI-td-vfU"/>
+                            <constraint firstItem="Kyk-89-csR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="FeA-hQ-QSA"/>
+                            <constraint firstItem="zo9-Jc-0yw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="JKp-ik-HyY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kyk-89-csR" secondAttribute="trailing" constant="20" id="dMu-kp-00e"/>
+                            <constraint firstItem="bgn-uf-wWI" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="hBT-y5-aYu"/>
+                            <constraint firstItem="Kyk-89-csR" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="qzS-uH-K7N"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="testLabelFer" destination="Kyk-89-csR" id="pl3-bp-aAI"/>
+                        <outlet property="testPageControlFer" destination="bgn-uf-wWI" id="ctC-LV-Kxs"/>
+                        <outlet property="testPickerFer" destination="zo9-Jc-0yw" id="UJc-Eu-fV6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-23.188405797101453" y="77.678571428571431"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
