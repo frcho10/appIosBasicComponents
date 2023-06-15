@@ -35,6 +35,16 @@
                                     <action selector="actionTestPageControlFer:" destination="BYZ-38-t0r" eventType="valueChanged" id="bb6-Y3-0zT"/>
                                 </connections>
                             </pageControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tzR-YV-9eM">
+                                <rect key="frame" x="141.5" y="44" width="131" height="32"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <connections>
+                                    <action selector="testSegmentFerAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="tk2-B2-mnJ"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -44,6 +54,8 @@
                             <constraint firstItem="zo9-Jc-0yw" firstAttribute="top" secondItem="Kyk-89-csR" secondAttribute="bottom" constant="7.5" id="BrI-td-vfU"/>
                             <constraint firstItem="Kyk-89-csR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="FeA-hQ-QSA"/>
                             <constraint firstItem="zo9-Jc-0yw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="JKp-ik-HyY"/>
+                            <constraint firstItem="tzR-YV-9eM" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Tpa-Ko-JT0"/>
+                            <constraint firstItem="tzR-YV-9eM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="WFv-1w-ZsE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kyk-89-csR" secondAttribute="trailing" constant="20" id="dMu-kp-00e"/>
                             <constraint firstItem="bgn-uf-wWI" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="hBT-y5-aYu"/>
                             <constraint firstItem="Kyk-89-csR" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="qzS-uH-K7N"/>
@@ -53,6 +65,7 @@
                         <outlet property="testLabelFer" destination="Kyk-89-csR" id="pl3-bp-aAI"/>
                         <outlet property="testPageControlFer" destination="bgn-uf-wWI" id="ctC-LV-Kxs"/>
                         <outlet property="testPickerFer" destination="zo9-Jc-0yw" id="UJc-Eu-fV6"/>
+                        <outlet property="testSegmentFer" destination="tzR-YV-9eM" id="mE7-Wc-EHe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
