@@ -46,22 +46,36 @@ class ViewController: UIViewController {
     }
     
     //funcion global para setear el nombre del label desde los action de cada componente
-    func setValueLabel(valor entrante:String){
+    func setValueLabel(valor entrante: String){
         
         testLabelFer.text = "Hola "+entrante
+    }
+    
+    func setValueToOtherComponents(valor entrante: Int){
+        
+        //PICKER
+        testPickerFer.selectRow(entrante, inComponent: 0, animated: true)
+        
+        //SEGMENT
+        testSegmentFer.selectedSegmentIndex = entrante
+        
+        //PAGE CONTROL
+        testPageControlFer.currentPage = entrante
+        
     }
     
     //actions
     @IBAction func actionTestPageControlFer(_ sender: Any) {//acction page control
         
+        setValueToOtherComponents(valor: testPageControlFer.currentPage)
         //esto es para darle la selección desde el page control al: picker
-        testPickerFer.selectRow(testPageControlFer.currentPage, inComponent: 0, animated: true)
+        //testPickerFer.selectRow(testPageControlFer.currentPage, inComponent: 0, animated: true)
         
         //:nombre al label
         setValueLabel(valor: arrayNames[testPageControlFer.currentPage])
         
         //:segment
-        testSegmentFer.selectedSegmentIndex = testPageControlFer.currentPage
+        //testSegmentFer.selectedSegmentIndex = testPageControlFer.currentPage
     }
     
     
@@ -70,11 +84,13 @@ class ViewController: UIViewController {
         //se setea el nombre del label
         setValueLabel(valor: arrayNames[testSegmentFer.selectedSegmentIndex])
         
+        setValueToOtherComponents(valor: testSegmentFer.selectedSegmentIndex)
+        
         //esto es para darle la selección desde el segment al: picker
-        testPickerFer.selectRow(testSegmentFer.selectedSegmentIndex, inComponent: 0, animated: true)
+        //testPickerFer.selectRow(testSegmentFer.selectedSegmentIndex, inComponent: 0, animated: true)
         
         //:al page control
-        testPageControlFer.currentPage = testSegmentFer.selectedSegmentIndex
+        //testPageControlFer.currentPage = testSegmentFer.selectedSegmentIndex
     }
     
     
@@ -101,13 +117,15 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {//el ext
         //esto es para darle la selección desde el pciker al: nombre del label
         setValueLabel(valor: valueSelected)
         
+        setValueToOtherComponents(valor: row)
+        
         //:page control
-        testPageControlFer.currentPage = row
+        //testPageControlFer.currentPage = row
         
         //:segment
-        testSegmentFer.selectedSegmentIndex = row
+        //testSegmentFer.selectedSegmentIndex = row
         
-    }//esto es para delegar la acción al seleccionar un elemento
+    }//esta func es para delegar la acción al seleccionar un elemento
     
     
 }
