@@ -28,6 +28,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var testSwitchFer: UISwitch!
     
+    @IBOutlet weak var testTextFieldFer: UITextField!
+    
     //entiendo que es como el component did mount de react
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +62,16 @@ class ViewController: UIViewController {
         //switch
         testSwitchFer.isOn = false
         
+        //texfield
+        testTextFieldFer.placeholder = "Teclea un nuevo nombre"
+        testTextFieldFer.delegate = self
+        
+        let personalizedColor = UIColor.purple
+           testTextFieldFer.layer.borderColor = personalizedColor.cgColor
+        
+        testTextFieldFer.layer.cornerRadius = 15.0
+        testTextFieldFer.layer.borderWidth = 2.0
+        
     }
     
     //funcion global para setear el nombre del label desde los action de cada componente
@@ -90,6 +102,8 @@ class ViewController: UIViewController {
         
         //STEPPER
         testStepperFer.value = Double(incoming)
+        
+        
         
     }
     
@@ -152,6 +166,16 @@ class ViewController: UIViewController {
             testPageControlFer.isHidden = testSwitchFer.isOn
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+
+        
+        testTextFieldFer.text = ""
+        self.view.endEditing(true)
+
+    }
+    
+    
+    
 }
 
 extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {//el extensions es para añadir funcionalidad a un tipo calase enum etc
@@ -186,6 +210,22 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {//el ext
     }//esta func es para delegar la acción al seleccionar un elemento
     
     
+}
+
+extension ViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == testTextFieldFer{
+            print("Es el mismo elemento declarado")
+        }
+        if (testTextFieldFer.text != nil && testTextFieldFer.text != "") {
+            testLabelFer.text = "Hola \(textField.text!)"
+        }
+        
+    }
 }
 
 

@@ -66,6 +66,11 @@
                                     <action selector="testSwitchFerAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="MPJ-hP-5HM"/>
                                 </connections>
                             </switch>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Mb-Ce-45I">
+                                <rect key="frame" x="40" y="161" width="334" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -78,9 +83,12 @@
                             <constraint firstItem="zo9-Jc-0yw" firstAttribute="top" secondItem="Kyk-89-csR" secondAttribute="bottom" constant="7.5" id="BrI-td-vfU"/>
                             <constraint firstItem="Kyk-89-csR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="FeA-hQ-QSA"/>
                             <constraint firstItem="zo9-Jc-0yw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="JKp-ik-HyY"/>
+                            <constraint firstItem="6Mb-Ce-45I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="Sdb-6u-CEo"/>
                             <constraint firstItem="tzR-YV-9eM" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Tpa-Ko-JT0"/>
+                            <constraint firstItem="6Mb-Ce-45I" firstAttribute="top" secondItem="50Y-2W-LGd" secondAttribute="bottom" constant="8" symbolic="YES" id="Ucr-ta-XMY"/>
                             <constraint firstItem="50Y-2W-LGd" firstAttribute="firstBaseline" secondItem="jFc-5A-xbt" secondAttribute="baseline" constant="8" symbolType="layoutAnchor" id="Vfs-mh-Nud"/>
                             <constraint firstItem="tzR-YV-9eM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="WFv-1w-ZsE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6Mb-Ce-45I" secondAttribute="trailing" constant="40" id="ZVe-g0-NJj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kyk-89-csR" secondAttribute="trailing" constant="20" id="dMu-kp-00e"/>
                             <constraint firstItem="50Y-2W-LGd" firstAttribute="centerX" secondItem="tzR-YV-9eM" secondAttribute="centerX" id="eHw-eu-dFb"/>
                             <constraint firstItem="bgn-uf-wWI" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="hBT-y5-aYu"/>
@@ -99,6 +107,7 @@
                         <outlet property="testSliderFer" destination="jFc-5A-xbt" id="flf-90-QWC"/>
                         <outlet property="testStepperFer" destination="50Y-2W-LGd" id="Gc0-0D-OUr"/>
                         <outlet property="testSwitchFer" destination="gTD-QZ-v3p" id="p7a-Yi-8FY"/>
+                        <outlet property="testTextFieldFer" destination="6Mb-Ce-45I" id="KPj-6b-KKo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
