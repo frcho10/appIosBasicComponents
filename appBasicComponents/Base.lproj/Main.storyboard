@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -14,21 +14,29 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="appBasicComponents" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zo9-Jc-0yw">
-                                <rect key="frame" x="47" y="471" width="320" height="216"/>
+                                <rect key="frame" x="0.0" y="258" width="320" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="Z5v-ce-WVG">
+                                        <variation key="heightClass=compact-widthClass=compact" constant="100"/>
+                                    </constraint>
+                                </constraints>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hola Fer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kyk-89-csR">
-                                <rect key="frame" x="20" y="443" width="374" height="20.5"/>
+                                <rect key="frame" x="20" y="230" width="280" height="20.5"/>
                                 <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact-widthClass=compact">
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </variation>
                             </label>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="bgn-uf-wWI">
-                                <rect key="frame" x="149" y="836" width="116" height="26"/>
+                                <rect key="frame" x="102" y="454" width="116" height="26"/>
                                 <color key="pageIndicatorTintColor" systemColor="opaqueSeparatorColor"/>
                                 <color key="currentPageIndicatorTintColor" name="AccentColor"/>
                                 <connections>
@@ -36,7 +44,7 @@
                                 </connections>
                             </pageControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tzR-YV-9eM">
-                                <rect key="frame" x="141.5" y="44" width="131" height="32"/>
+                                <rect key="frame" x="94.5" y="0.0" width="131" height="32"/>
                                 <segments>
                                     <segment title="First"/>
                                     <segment title="Second"/>
@@ -46,7 +54,7 @@
                                 </connections>
                             </segmentedControl>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="jFc-5A-xbt">
-                                <rect key="frame" x="148" y="83" width="118" height="31"/>
+                                <rect key="frame" x="148" y="39" width="24" height="31"/>
                                 <color key="minimumTrackTintColor" systemColor="systemPurpleColor"/>
                                 <color key="maximumTrackTintColor" red="0.93059692091174406" green="0.76595572539389845" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
@@ -54,20 +62,20 @@
                                 </connections>
                             </slider>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="50Y-2W-LGd">
-                                <rect key="frame" x="160" y="121" width="94" height="32"/>
+                                <rect key="frame" x="113" y="77" width="94" height="32"/>
                                 <connections>
                                     <action selector="testStepperFerAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="X6q-In-R8Q"/>
                                 </connections>
                             </stepper>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gTD-QZ-v3p">
-                                <rect key="frame" x="182.5" y="404" width="51" height="31"/>
+                                <rect key="frame" x="135.5" y="191" width="51" height="31"/>
                                 <color key="onTintColor" red="0.7801090275" green="0.36347735450000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="testSwitchFerAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="MPJ-hP-5HM"/>
                                 </connections>
                             </switch>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Mb-Ce-45I">
-                                <rect key="frame" x="40" y="161" width="334" height="34"/>
+                                <rect key="frame" x="40" y="117" width="240" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -93,7 +101,9 @@
                             <constraint firstItem="50Y-2W-LGd" firstAttribute="centerX" secondItem="tzR-YV-9eM" secondAttribute="centerX" id="eHw-eu-dFb"/>
                             <constraint firstItem="bgn-uf-wWI" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="hBT-y5-aYu"/>
                             <constraint firstItem="jFc-5A-xbt" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="kIR-Va-Tyl"/>
-                            <constraint firstItem="Kyk-89-csR" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="qzS-uH-K7N"/>
+                            <constraint firstItem="Kyk-89-csR" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="qzS-uH-K7N">
+                                <variation key="heightClass=compact-widthClass=regular" constant="10"/>
+                            </constraint>
                             <constraint firstItem="Kyk-89-csR" firstAttribute="top" secondItem="gTD-QZ-v3p" secondAttribute="bottom" constant="8" symbolic="YES" id="rJN-h7-zNk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jFc-5A-xbt" secondAttribute="trailing" constant="150" id="rtE-km-6Ua"/>
                             <constraint firstItem="50Y-2W-LGd" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="wtX-j3-K95"/>
@@ -112,7 +122,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-23.188405797101453" y="77.678571428571431"/>
+            <point key="canvasLocation" x="-23.75" y="76.875"/>
         </scene>
     </scenes>
     <resources>
